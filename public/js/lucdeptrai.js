@@ -19,7 +19,10 @@ $(document).on('paste','#access_token',function(){
             })
     },100);
 });
-
+$('#limit').on('change',function(){console.log(111);
+    var limit = $('#limit').val();
+    $('#thanhtien').val(limit * 40);
+});
 $(document).ready(function(){
     toastr.options.progressBar = true;
     toastr.options.newestOnTop = true;

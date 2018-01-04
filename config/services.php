@@ -34,5 +34,9 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
+    'facebook' => [
+        'client_id' => '1849046112052624',
+        'client_secret' => '1e7ef1cb5431fc93ca7b2f88172172ae',
+        'redirect' => 'http://likepro.vip/callback',
+    ],
 ];

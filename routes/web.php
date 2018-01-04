@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/redirect','LoginController@redirect');
+
+Route::get('/callback','LoginController@callback');
+
+Route::get('/logout','LoginController@logout');
+
+Route::group(['prefix'=>'api'],function(){
+   Route::get('/me','ApiController@me');
 });

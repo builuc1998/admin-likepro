@@ -20,6 +20,7 @@ import axios from 'axios'
 import Navbar from './components/layouts/Navbar.vue'
 import Sidebar from './components/layouts/Sidebar.vue'
 import Footer from './components/layouts/Footer.vue'
+var info = [];
 
 export default {
     components: {
@@ -31,18 +32,14 @@ export default {
     data() {
         return {
             posts: [],
-            errors: []
+            errors: [],
+            info:{},
         }
     },
-    created() {
-        axios.get('http://jsonplaceholder.typicode.com/posts')
-            .then(response => {
-            // JSON responses are automatically parsed.
-            this.posts = response.data
-    })
-    .catch(e => {
-            this.errors.push(e)
-    })
-    }
+    mounted() {
+        axios.get('api/me').then((response) => {
+            this.info = response.data;
+        })
+    },
 }
 </script>

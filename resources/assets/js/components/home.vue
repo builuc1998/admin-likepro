@@ -67,31 +67,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <!---Form Login--->
-            <div class="col-md-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="title-login-box">
-                            Đăng Nhập Để Sử Dụng Dịch Vụ
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#login_token">Đăng Nhập Token</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div id="login_token" class="tab-pane fade in active">
-                                <div class="input-group">
-                                    <input type="text" id="access_token" class="form-control" placeholder="Dán Token Vào Đây" aria-describedby="basic-addon2" />
-                                    <span class="input-group-addon" style="background: #e9ecef;" id="basic-addon2"><span id="btnlogin"><i class="fa fa-sign-in"></i></span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!---End Form Login--->
         <!---Giới Thiệu Dịch Vụ---->
         <div class="row features">
             <div class="col-lg-3 col-sm-4">

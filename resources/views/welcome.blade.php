@@ -21,7 +21,7 @@
         <script src="{{ asset('alt/adminlte.min.js') }}"></script>
         <script src="{{ asset('toastr/toastr.min.js') }}"></script>
         <script src="{{ asset('js/lucdeptrai.js') }}"></script>
-        <title>Laravel</title>
+        <title>LikePro</title>
     </head>
     <body class="skin-blue sidebar-mini">
         <div class="pace  pace-inactive pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
