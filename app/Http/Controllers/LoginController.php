@@ -14,14 +14,18 @@ class LoginController extends Controller
     public function callback()
     {
         $user = Socialite::driver('facebook')->user();
-
+        if($user->getEmail() == ''){
+            $email = $user->getId().'@likepro.vip';
+        }else{
+            $email = $user->getEmail();
+        }
           $account = User::where('fbid',$user->getId())->first();
           if($account){
               auth()->login($account);
           }else{
               $account = User::create([
                   'name' =>$user->getName(),
-                  'email' =>$user->getEmail(),
+                  'email' =>$email,
                   'fbid' =>$user->getId(),
                   'money' => 0,
                   'status' => 1,

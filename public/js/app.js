@@ -486,6 +486,12 @@ module.exports = function normalizeComponent (
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(20);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -580,10 +586,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 var g;
@@ -610,7 +616,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -798,12 +804,6 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(20);
 
 /***/ }),
 /* 6 */
@@ -1125,7 +1125,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(62);
 
 
 /***/ }),
@@ -1145,7 +1145,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __webpack_require__(11) }, { path: '/_=_', component: __webpack_require__(11) }, { path: '/follow', component: __webpack_require__(46) }, { path: '/viplike', component: __webpack_require__(49) }, { path: '/vipcomment', component: __webpack_require__(51) }, { path: '/vipshare', component: __webpack_require__(53) }, { path: '/review', component: __webpack_require__(55) }, { path: '/profile', component: __webpack_require__(67) }];
+var routes = [{ path: '/', component: __webpack_require__(11) }, { path: '/_=_', component: __webpack_require__(11) }, { path: '/follow', component: __webpack_require__(46) }, { path: '/viplike', component: __webpack_require__(49) }, { path: '/vipcomment', component: __webpack_require__(52) }, { path: '/vipshare', component: __webpack_require__(55) }, { path: '/review', component: __webpack_require__(57) }, { path: '/profile', component: __webpack_require__(59) }];
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: routes
 });
@@ -11971,7 +11971,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(15).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(15).setImmediate))
 
 /***/ }),
 /* 15 */
@@ -12223,7 +12223,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)))
 
 /***/ }),
 /* 17 */
@@ -14908,7 +14908,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_layouts_Navbar_vue__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_layouts_Navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_layouts_Navbar_vue__);
@@ -14973,7 +14973,7 @@ var info = [];
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(6);
 var Axios = __webpack_require__(22);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 
 /**
  * Create an instance of Axios
@@ -15056,7 +15056,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(31);
 var dispatchRequest = __webpack_require__(32);
@@ -15597,7 +15597,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(33);
 var isCancel = __webpack_require__(9);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(34);
 var combineURLs = __webpack_require__(35);
 
@@ -16645,7 +16645,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -16911,9 +16911,9 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16953,359 +16953,549 @@ module.exports = Component.exports
 
 /***/ }),
 /* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            posts: [],
+            errors: [],
+            type: [],
+            package: '',
+            uid: '',
+            speed: '',
+            time: '',
+            listVipID: []
+        };
+    },
+
+    methods: {
+        install_viplike: function install_viplike() {
+            var _this = this;
+
+            this.type = [];
+            $('input[name="type[]"]:checked').each(function (i, e) {
+                _this.type.push($(e).val());
+            });
+            this.package = $('#package').val();
+            this.uid = $('#uid').val();
+            this.speed = $('#speed').val();
+            this.time = $('#time').val();
+            if (this.type == '') {
+                toastr.error("Vui lòng chọn loại cảm xúc!");
+                return false;
+            } else if (this.package == '') {
+                toastr.error("Vui lòng chọn gói cảm xúc!");
+                return false;
+            } else if (this.uid == '') {
+                toastr.error("Vui lòng nhập UID!");
+                return false;
+            } else if (this.speed == '') {
+                toastr.error("Vui lòng chọn loại thời gian cron!");
+                return false;
+            } else if (this.time == '') {
+                toastr.error("Vui lòng chọn gói thời gian!");
+                return false;
+            }
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('api/installViplike', {
+                'uid': this.uid,
+                'type': this.type,
+                'package': this.package,
+                'speed': this.speed,
+                'time': this.time
+            }).then(function (response) {
+                if (response.data.success == 'true') {
+                    toastr.success(response.data.message);
+                } else {
+                    toastr.error(response.data.message);
+                }
+            });
+        }
+    },
+    mounted: function mounted() {
+        var _this2 = this;
+
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/getViplikeID').then(function (response) {
+            _this2.listVipID = response.data;
+        });
+    }
+});
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-lg-6" }, [
+      _c("div", { staticClass: "panel panel-default" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel-body" }, [
+          _c("form", { attrs: { action: "", method: "POST" } }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v("\n                    Thành Tiền:\n                    "),
+            _vm._m(6),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-danger",
+                attrs: { type: "button" },
+                on: { click: _vm.install_viplike }
+              },
+              [_vm._v("Cài VIP Like")]
+            )
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-6" }, [
+      _c("div", { staticClass: "panel panel-default" }, [
+        _vm._m(7),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel-body" }, [
+          _c("div", { staticClass: "box-body table-responsive no-padding" }, [
+            _c("table", { staticClass: "table table-hover" }, [
+              _c(
+                "tbody",
+                [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _vm._l(_vm.listVipID, function(list) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(list.uid))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(list.package))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(list.type))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(list.time) + " Ngày")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("input", {
+                          attrs: { type: "checkbox" },
+                          domProps: {
+                            checked: list.active == 1 ? "checked" : ""
+                          }
+                        })
+                      ])
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _c("b", [
-              _c("i", { staticClass: "fa fa-gears" }),
-              _vm._v(" Panel Cài Đặt VIP Like")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
-            _c("form", { attrs: { action: "", method: "POST" } }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("ID mới cần thêm:")]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "uid",
-                    placeholder: "100004520190007",
-                    type: "number",
-                    name: "id",
-                    required: "",
-                    autofocus: ""
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Số Status/1 Ngày:")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "limitpost", id: "limitpost" }
-                  },
-                  [
-                    _c("option", { attrs: { value: "12" } }, [
-                      _vm._v("12 Post/Day")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Số Lượng Like:")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "goi", id: "goi" }
-                  },
-                  [
-                    _c("option", { attrs: { value: "15" } }, [
-                      _vm._v("150 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "30" } }, [
-                      _vm._v("300 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "60" } }, [
-                      _vm._v("600 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "100" } }, [
-                      _vm._v("1.000 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "150" } }, [
-                      _vm._v("1.500 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "200" } }, [
-                      _vm._v("2.000 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "250" } }, [
-                      _vm._v("2.500 like(Reactions)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "300" } }, [
-                      _vm._v("3.000 like(Reactions)")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Loại cảm xúc:")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-center" }, [
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Like" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: {
-                          checked: "",
-                          type: "radio",
-                          name: "type",
-                          value: "LIKE"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { attrs: { id: "like" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Cảm Xúc LOVE" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "LOVE" }
-                      }),
-                      _c("span", { attrs: { id: "love" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Cảm Xúc WOW" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "WOW" }
-                      }),
-                      _c("span", { attrs: { id: "wow" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Cảm Xúc HAHA" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "HAHA" }
-                      }),
-                      _c("span", { attrs: { id: "haha" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Cảm Xúc SAD" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "SAD" }
-                      }),
-                      _c("span", { attrs: { id: "sad" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP Cảm Xúc ANGRY" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "ANGRY" }
-                      }),
-                      _c("span", { attrs: { id: "angry" } })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticStyle: { padding: "0 5px" },
-                      attrs: { title: "Gói VIP RANDOM Cảm Xúc" }
-                    },
-                    [
-                      _c("input", {
-                        staticStyle: { float: "left" },
-                        attrs: { type: "radio", name: "type", value: "random" }
-                      }),
-                      _c("span", { attrs: { id: "live" } }),
-                      _c("span", { attrs: { id: "sad" } }),
-                      _c("span", { attrs: { id: "love" } }),
-                      _c("span", { attrs: { id: "angry" } }),
-                      _c("span", { attrs: { id: "wow" } }),
-                      _c("span", { attrs: { id: "haha" } })
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Tốc Độ Like/5 Phút:")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "solike", id: "solike" }
-                  },
-                  [
-                    _c("option", { attrs: { value: "30" } }, [
-                      _vm._v("30 Like")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "40" } }, [
-                      _vm._v("40 Like")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "50" } }, [
-                      _vm._v("50 Like")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "100" } }, [
-                      _vm._v("100 Like")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Thời Hạn:")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "time", id: "time" }
-                  },
-                  [
-                    _c("option", { attrs: { value: "15" } }, [
-                      _vm._v("15 Ngày (0.5 Tháng)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "30" } }, [
-                      _vm._v("30 Ngày (1 Tháng)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "45" } }, [
-                      _vm._v("45 Ngày (1.5 Tháng)")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "60" } }, [
-                      _vm._v("60 Ngày (2 Tháng)")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v("\n                    Thành Tiền:\n                    "),
-              _c("div", { staticClass: "input-group" }, [
-                _c("span", { staticClass: "input-group-addon" }, [_vm._v("$")]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    disabled: "disable",
-                    value: "15000",
-                    id: "thanhtien"
-                  }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "input-group-addon" }, [
-                  _vm._v("VNĐ")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-danger", attrs: { type: "button" } },
-                [_vm._v("Cài VIP Like")]
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _c("b", [
-              _c("i", { staticClass: "fa fa-gears" }),
-              _vm._v(" Danh Sách ID VIP")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTables_wrapper form-inline dt-bootstrap no-footer",
-                attrs: { id: "example1_wrapper" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12" }, [
-                    _c("table", { staticClass: "table table-bordered" }, [
-                      _c("tr", { attrs: { role: "row" } }, [
-                        _c("th", [_vm._v("ID VIP")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Gói")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Type")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Hạn Sử Dụng")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Active")])
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("b", [
+        _c("i", { staticClass: "fa fa-gears" }),
+        _vm._v(" Panel Cài Đặt VIP Like")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("ID mới cần thêm:")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "uid",
+          placeholder: "100004520190007",
+          type: "number",
+          name: "id",
+          required: "",
+          autofocus: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Số Lượng Like:")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          staticClass: "form-control",
+          attrs: { name: "package", id: "package" }
+        },
+        [
+          _c("option", { attrs: { value: "15" } }, [
+            _vm._v("150 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "30" } }, [
+            _vm._v("300 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "60" } }, [
+            _vm._v("600 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "100" } }, [
+            _vm._v("1.000 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "150" } }, [
+            _vm._v("1.500 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "200" } }, [
+            _vm._v("2.000 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "250" } }, [
+            _vm._v("2.500 like(Reactions)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "300" } }, [
+            _vm._v("3.000 like(Reactions)")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Loại cảm xúc:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Like" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: {
+                checked: "",
+                type: "checkbox",
+                name: "type[]",
+                value: "LIKE"
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { attrs: { id: "like" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Cảm Xúc LOVE" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: { type: "checkbox", name: "type[]", value: "LOVE" }
+            }),
+            _c("span", { attrs: { id: "love" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Cảm Xúc WOW" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: { type: "checkbox", name: "type[]", value: "WOW" }
+            }),
+            _c("span", { attrs: { id: "wow" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Cảm Xúc HAHA" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: { type: "checkbox", name: "type[]", value: "HAHA" }
+            }),
+            _c("span", { attrs: { id: "haha" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Cảm Xúc SAD" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: { type: "checkbox", name: "type[]", value: "SAD" }
+            }),
+            _c("span", { attrs: { id: "sad" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticStyle: { padding: "0 5px" },
+            attrs: { title: "Gói VIP Cảm Xúc ANGRY" }
+          },
+          [
+            _c("input", {
+              staticStyle: { float: "left" },
+              attrs: { type: "checkbox", name: "type[]", value: "ANGRY" }
+            }),
+            _c("span", { attrs: { id: "angry" } })
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Tốc Độ Like/5 Phút:")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        { staticClass: "form-control", attrs: { name: "solike", id: "speed" } },
+        [
+          _c("option", { attrs: { value: "30" } }, [_vm._v("30 Like")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "40" } }, [_vm._v("40 Like")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "50" } }, [_vm._v("50 Like")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "100" } }, [_vm._v("100 Like")])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Thời Hạn:")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        { staticClass: "form-control", attrs: { name: "time", id: "time" } },
+        [
+          _c("option", { attrs: { value: "15" } }, [
+            _vm._v("15 Ngày (0.5 Tháng)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "30" } }, [
+            _vm._v("30 Ngày (1 Tháng)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "45" } }, [
+            _vm._v("45 Ngày (1.5 Tháng)")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "60" } }, [
+            _vm._v("60 Ngày (2 Tháng)")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group" }, [
+      _c("span", { staticClass: "input-group-addon" }, [_vm._v("$")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          disabled: "disable",
+          value: "15000",
+          id: "thanhtien"
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "input-group-addon" }, [_vm._v("VNĐ")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("b", [
+        _c("i", { staticClass: "fa fa-gears" }),
+        _vm._v(" Danh Sách ID VIP")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("ID VIP")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Gói")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Type")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Hạn Sử Dụng")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Active")])
     ])
   }
 ]
@@ -17319,15 +17509,15 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17366,7 +17556,106 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 53 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17406,23 +17695,6 @@ var staticRenderFns = [
                     autofocus: ""
                   }
                 })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Số Status/1 Ngày:")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "limitpost", id: "limitpost" }
-                  },
-                  [
-                    _c("option", { attrs: { value: "12" } }, [
-                      _vm._v("12 Post/Day")
-                    ])
-                  ]
-                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
@@ -17626,7 +17898,7 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -17634,7 +17906,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(54)
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17673,7 +17945,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17854,7 +18126,7 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -17862,7 +18134,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(58)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17901,7 +18173,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18102,30 +18374,15 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(69)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(61)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18164,7 +18421,65 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 60 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18291,62 +18606,10 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 62 */
 /***/ (function(module, exports) {
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

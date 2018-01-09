@@ -10,13 +10,13 @@
                         <div class="form-group">
                             <label>ID mới cần thêm:</label>
                             <input id="uid" placeholder="100004520190007" type="number" class="form-control" name="id" required="" autofocus="">
-                        </div>
+                        </div><!--
                         <div class="form-group">
                             <label>Số Status/1 Ngày:</label>
                             <select name="limitpost" id="limitpost" class="form-control">
                                 <option value="12">12 Post/Day</option>
                             </select>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label>Nội Dung</label>
                             <textarea placeholder="Nhiều nội dung cách nhau bằng dấu gạch thẳng '|' Nội dung 1 | Nội dung 2 | Nội dung 3" class="form-control" rows="6" style="max-width: 100%"></textarea>
@@ -92,3 +92,5 @@
         </div>
     </div>
 </template>
+<script>
+</script>
