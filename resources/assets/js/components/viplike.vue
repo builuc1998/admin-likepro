@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label>Số Lượng Like:</label>
 
-                            <select name="package" id="package" class="form-control">
+                            <select name="package" id="package" class="form-control" v-on:change="this.$parent.tinhtien">
                                 <option value="15">150 like(Reactions)</option>
                                 <option value="30">300 like(Reactions)</option>
                                 <option value="60">600 like(Reactions)</option>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <label>Thời Hạn:</label>
-                            <select name="time" id="time" class="form-control">
+                            <select name="time" id="time" class="form-control" v-on:change="this.$parent.tinhtien">
                                 <!--<option value="free">Free Test 1 Day</option>-->
                                 <option value="15">15 Ngày (0.5 Tháng)</option>
                                 <option value="30">30 Ngày (1 Tháng)</option>
@@ -60,10 +60,11 @@
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input type="text" disabled="disable" value="15000" class="form-control" id="thanhtien" />
+                            <input type="hidden" disabled="disable" value="like" class="form-control" id="action" />
                             <span class="input-group-addon">VNĐ</span>
                         </div>
                         <br>
-                        <button type="button" class="btn btn-danger" v-on:click="install_viplike">Cài VIP Like</button>
+                        <button type="button" class="btn btn-danger" v-on:click="this.$parent.install">Cài VIP Like</button>
                     </form>
                 </div>
             </div>
@@ -78,20 +79,19 @@
                         <table class="table table-hover">
                             <tbody>
                             <tr>
-                                <th>ID VIP</th>
+                                <th>UID</th>
                                 <th>Gói</th>
-                                <th>Type</th>
                                 <th>Hạn Sử Dụng</th>
                                 <th>Active</th>
                             </tr>
-                            <tr v-for="list in listVipID">
+                            <tr v-for="list in listVipID.data">
                                 <td>{{list.uid}}</td>
-                                <td>{{list.package}}</td>
-                                <td>{{list.type}}</td>
+                                <td>{{list.limit * 10}} Like</td>
                                 <td>{{list.time}} Ngày</td>
                                 <td><input type="checkbox" :checked="list.active == 1 ? 'checked':''" /> </td>
                             </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -113,50 +113,8 @@ export default {
             listVipID: [],
         }
     },
-    methods:{
-        install_viplike: function(){
-            this.type = [];
-            $('input[name="type[]"]:checked').each((i,e)=>{
-                this.type.push($(e).val());
-            });
-            this.package = $('#package').val();
-            this.uid = $('#uid').val();
-            this.speed = $('#speed').val();
-            this.time = $('#time').val();
-            if(this.type == ''){
-                toastr.error("Vui lòng chọn loại cảm xúc!");
-                return false;
-            }else if(this.package == ''){
-                toastr.error("Vui lòng chọn gói cảm xúc!");
-                return false;
-            }else if(this.uid == ''){
-                toastr.error("Vui lòng nhập UID!");
-                return false;
-            }else if(this.speed == ''){
-                toastr.error("Vui lòng chọn loại thời gian cron!");
-                return false;
-            }else if(this.time == ''){
-                toastr.error("Vui lòng chọn gói thời gian!");
-                return false;
-            }
-            axios.post('api/installViplike',
-                {
-                    'uid':this.uid,
-                    'type':this.type,
-                    'package':this.package,
-                    'speed':this.speed,
-                    'time':this.time,
-                }).then((response) => {
-                if(response.data.success == 'true'){
-                    toastr.success(response.data.message);
-                }else{
-                    toastr.error(response.data.message);
-                }
-            })
-        }
-    },
     mounted() {
-        axios.get('api/getViplikeID').then((response) => {
+        axios.get('api/getViplikeID?action=like').then((response) => {
             this.listVipID = response.data;
         })
     },

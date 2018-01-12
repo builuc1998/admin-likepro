@@ -48,32 +48,48 @@ export default {
             this.speed = $('#speed').val();
             this.time = $('#time').val();
             this.action = $('#action').val();
+            this.content = $('#content').val();
+            this.rate = $('#rate').val();
+            this.token = $('meta[name="csrf-token"]').attr('content');
+            
+            if(this.uid == ''){
+                    toastr.error("Vui lòng nhập UID!");
+                    return false;
+            }
+            
+            
             if(this.action == 'like'){
                 if(this.type == ''){
-                    toastr.error("Vui l�ng ch?n lo?i c?m x�c!");
+                    toastr.error("Vui lòng chọn loại cảm xúc!");
                     return false;
                 }else if(this.package == ''){
-                    toastr.error("Vui l�ng ch?n g�i c?m x�c!");
-                    return false;
-                }else if(this.uid == ''){
-                    toastr.error("Vui l�ng nh?p UID!");
+                    toastr.error("Vui lòng chọn gói cảm xúc!");
                     return false;
                 }else if(this.speed == ''){
-                    toastr.error("Vui l�ng ch?n lo?i th?i gian cron!");
+                    toastr.error("Vui lòng chọn thời gian cron!");
                     return false;
                 }else if(this.time == ''){
-                    toastr.error("Vui l�ng ch?n g�i th?i gian!");
+                    toastr.error("Vui lòng chọn gói thời gian!");
                     return false;
                 }
             }
-            axios.post('api/installViplike',
+            if(this.action == 'comment'){
+                if(this.content == ''){
+                    toastr.error("Vui lòng nhập nội dung comment!");
+                    return false;
+                }
+            }
+            axios.post('api/install',
                 {
                     'uid':this.uid,
                     'type':this.type,
                     'package':this.package,
+                    'content':this.content,
                     'speed':this.speed,
                     'time':this.time,
-                    'action':this.action
+                    'rate':this.rate,
+                    'action':this.action,
+                    '__token':this.token
                 }).then((response) => {
                 if(response.data.success == 'true'){
                     toastr.success(response.data.message);
@@ -81,6 +97,11 @@ export default {
                     toastr.error(response.data.message);
                 }
             })
+        },
+        tinhtien: function(){
+            this.package = $('#package').val();
+            this.time = $('#time').val();
+            $('#thanhtien').val(this.package * 1000 * (this.time / 15));
         }
     },
     mounted() {

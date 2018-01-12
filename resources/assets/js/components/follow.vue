@@ -16,16 +16,17 @@
                             <center>
                                 <div class="label label-info" align="center">Follow: <span id="soluong">1000</span></div>
                             </center>
-                            <input class="form-control" type="range" name="soluong" min="1000" max="50000" id="limit" value="60" onchange="document.getElementById('soluong').innerHTML=this.value;">
+                            <input class="form-control" type="range" name="package" min="1000" max="50000" id="package" value="60" onchange="document.getElementById('soluong').innerHTML=this.value;">
                         </div>
                         Thành Tiền:
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input type="text" disabled="disable" value="40000" class="form-control" id="thanhtien" />
+                            <input type="hidden" value="follow" id="action" />
                             <span class="input-group-addon">VNĐ</span>
                         </div>
                         <br>
-                        <button type="button" class="btn btn-danger">Thanh Toán</button>
+                        <button type="button" class="btn btn-danger" v-on:click="this.$parent.install">Thanh Toán</button>
                     </form>
                 </div>
             </div>
@@ -39,14 +40,21 @@
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <table class="table table-bordered">
-                                    <tr role="row">
-                                        <th>ID </th>
-                                        <th>Tổng</th>
-                                        <th>Đã Chạy</th>
-                                        <th>Còn Nợ</th>
-                                        <th>Thời Gian</th>
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr role="row">
+                                            <th>ID </th>
+                                            <th>Tổng</th>
+                                            <th>Đã Chạy</th>
+                                            <th>Còn Nợ</th>
+                                        </tr>
+                                    <tr v-for="list in listVipID.data">
+                                        <td>{{list.uid}}</td>
+                                        <td>{{list.limit}} Sub</td>
+                                        <td>{{list.dachay}}</td>
+                                        <td>{{list.limit - list.dachay}}</td>
                                     </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -56,21 +64,25 @@
         </div>
     </div>
 </template>
+
 <script>
 import axios from 'axios'
-
 export default {
-    replace: false,
     data() {
         return {
             posts: [],
             errors: [],
-            info:{},
+            type:[],
+            package: '',
+            uid: '',
+            speed: '',
+            time: '',
+            listVipID: [],
         }
     },
     mounted() {
-        axios.get('api/follow').then((response) => {
-            this.info = response.data;
+        axios.get('api/getViplikeID?action=follow').then((response) => {
+            this.listVipID = response.data;
         })
     },
 }

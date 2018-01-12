@@ -41,11 +41,11 @@
                         <i class="fa fa-hand-o-right"></i> <span>Mua Vip Follow</span>
                     </router-link>
                 </li>
-                <li>
+                <!--<li>
                     <router-link to="/vipbuff">
                         <i class="fa fa-hand-o-right"></i> <span>Vip Buff</span>
                     </router-link>
-                </li>
+                </li>-->
             </ul>
 
         </section>

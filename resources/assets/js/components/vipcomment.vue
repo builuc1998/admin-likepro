@@ -19,12 +19,12 @@
                         </div>-->
                         <div class="form-group">
                             <label>Nội Dung</label>
-                            <textarea placeholder="Nhiều nội dung cách nhau bằng dấu gạch thẳng '|' Nội dung 1 | Nội dung 2 | Nội dung 3" class="form-control" rows="6" style="max-width: 100%"></textarea>
+                            <textarea id="content" placeholder="Nhiều nội dung cách nhau bằng dấu gạch thẳng '|' Nội dung 1 | Nội dung 2 | Nội dung 3" class="form-control" rows="6" style="max-width: 100%"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Số Lượng Comment:</label>
 
-                            <select name="goi" id="goi" class="form-control">
+                            <select name="package" id="package" class="form-control">
                                 <option value="15">150 Comment</option>
                                 <option value="30">300 Comment</option>
                                 <option value="60">600 Comment</option>
@@ -37,12 +37,11 @@
                         </div>
                         <div class="form-group">
                             <label>Tốc Độ Like/5 Phút:</label>
-                            <select name="solike" id="solike" class="form-control">
+                            <select name="speed" id="speed" class="form-control">
                                 <option value="30">30 Comment</option>
                                 <option value="40">40 Comment</option>
                                 <option value="50">50 Comment</option>
                                 <option value="100">100 Comment</option>
-
                             </select>
                         </div>
                         <div class="form-group">
@@ -59,10 +58,11 @@
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input type="text" disabled="disable" value="15000" class="form-control" id="thanhtien" />
+                            <input type="hidden" id="action" value="comment" />
                             <span class="input-group-addon">VNĐ</span>
                         </div>
                         <br>
-                        <button type="button" onclick="install_vip()" class="btn btn-danger">Cài VIP Comment</button>
+                        <button type="button" v-on:click="this.$parent.install" class="btn btn-danger">Cài VIP Comment</button>
                     </form>
                 </div>
             </div>
@@ -76,13 +76,23 @@
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <table class="table table-bordered">
-                                    <tr role="row">
-                                        <th>ID VIP</th>
+                                <table class="table table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th>UID</th>
                                         <th>Gói</th>
+                                        <th>Type</th>
                                         <th>Hạn Sử Dụng</th>
                                         <th>Active</th>
                                     </tr>
+                                    <tr v-for="list in listVipID.data">
+                                        <td>{{list.uid}}</td>
+                                        <td>{{list.limit * 10}} Cmt</td>
+                                        <td>{{list.content}}</td>
+                                        <td>{{list.time}} Ngày</td>
+                                        <td><input type="checkbox" :checked="list.active == 1 ? 'checked':''" /> </td>
+                                    </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -93,4 +103,24 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
+export default {
+    data() {
+        return {
+            posts: [],
+            errors: [],
+            type:[],
+            package: '',
+            uid: '',
+            speed: '',
+            time: '',
+            listVipID: [],
+        }
+    },
+    mounted() {
+        axios.get('api/getViplikeID?action=comment').then((response) => {
+            this.listVipID = response.data;
+        })
+    },
+}
 </script>
