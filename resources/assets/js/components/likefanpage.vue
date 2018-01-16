@@ -8,7 +8,7 @@
                 <div class="panel-body">
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label>UID mới cần thêm:</label>
+                            <label>ID mới cần thêm:</label>
                             <input id="uid" placeholder="100004520190007" type="number" class="form-control" name="id" required="" autofocus="">
                         </div>
                         <div class="form-group">
@@ -60,7 +60,7 @@
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input type="text" disabled="disable" value="15000" class="form-control" id="thanhtien" />
-                            <input type="hidden" disabled="disable" value="like" class="form-control" id="action" />
+                            <input type="hidden" disabled="disable" value="likefanpage" class="form-control" id="action" />
                             <span class="input-group-addon">VNĐ</span>
                         </div>
                         <br>
@@ -114,7 +114,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('api/getViplikeID?action=like').then((response) => {
+        axios.get('api/getViplikeID?action=likefanpage').then((response) => {
             this.listVipID = response.data;
         })
     },

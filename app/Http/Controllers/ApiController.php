@@ -11,7 +11,9 @@ use App\Vip;
 use App\Share;
 use App\Follow;
 use App\Review;
+use App\history;
 use Carbon\Carbon;
+use App\User;
 
 
 class ApiController extends Controller
@@ -32,6 +34,10 @@ class ApiController extends Controller
         ],200);
     }
     public function install(Request $request){
+        if(auth::user()->money < 10000){
+            return \response()->json(['success'=>'false','message'=>'Bạn không đủ tiền để thanh toán!'],200);
+        }
+        
         if($request->uid == ''){
             return \response()->json(['success'=>'false','message'=>'Vui lòng nhập UID'],200);
         }else if($request->type == ''){
@@ -64,6 +70,7 @@ class ApiController extends Controller
                 'type' => json_encode($request->type),
                 'speed' => $request->speed
             ]);
+            User::where('id',auth::user()->id)->update(['money' => auth::user()->money - 10000 ]);
             return \response()->json(['success'=>'true','message'=>'Chúc mừng bạn đã thanh toán thành công'],200);
             }
             if($request->action == 'comment'){
@@ -73,6 +80,7 @@ class ApiController extends Controller
                 'speed' => $request->speed,
                 'content' => $request->content
             ]);
+            User::where('id',auth::user()->id)->update(['money' => auth::user()->money - 10000 ]);
             return \response()->json(['success'=>'true','message'=>'Chúc mừng bạn đã thanh toán thành công'],200);
             }
             if($request->action == 'share'){
@@ -81,6 +89,7 @@ class ApiController extends Controller
                 'limit' => $request->package,
                 'speed' => $request->speed
             ]);
+            User::where('id',auth::user()->id)->update(['money' => auth::user()->money - 10000 ]);
             return \response()->json(['success'=>'true','message'=>'Chúc mừng bạn đã thanh toán thành công'],200);
             }
             if($request->action == 'review'){
@@ -90,6 +99,7 @@ class ApiController extends Controller
                 'content' => $request->content,
                 'rate' => $request->rate
             ]);
+            User::where('id',auth::user()->id)->update(['money' => auth::user()->money - 10000 ]);
             return \response()->json(['success'=>'true','message'=>'Chúc mừng bạn đã thanh toán thành công'],200);
             }
             if($request->action == 'follow'){
@@ -97,6 +107,7 @@ class ApiController extends Controller
                 'vipid' => $create->id,
                 'limit' => $request->package
             ]);
+            User::where('id',auth::user()->id)->update(['money' => auth::user()->money - 10000 ]);
             return \response()->json(['success'=>'true','message'=>'Chúc mừng bạn đã thanh toán thành công'],200);
             }
         }
@@ -123,6 +134,11 @@ class ApiController extends Controller
             $vipid = Vip::select('vip.uid','follow.limit','vip.time','vip.active','follow.dachay','follow.no')->where('user_id',auth::user()->id)->where('action',Input::get('action'))->join('follow', 'vip.id', '=', 'follow.vipid')->paginate(10);
             return \response()->json($vipid);
         }
+    }
+    
+    public function history(){
+        $his = history::where('me','0')->where('userid',auth::user()->id)->orderBy('created_at','DESC')->get();
+        return \response()->json($his);
     }
 
 }

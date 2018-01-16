@@ -15,6 +15,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/home', 'HomeController@index');
+
 Route::get('/redirect','LoginController@redirect');
 
 Route::get('/callback','LoginController@callback');
@@ -27,11 +29,18 @@ Route::group(['prefix'=>'api'],function(){
    Route::get('/getViplikeID','ApiController@getViplikeID');
    Route::get('/updateClone','agentApiController@updateClone');
    Route::get('/DoVipLike','agentApiController@DoVipLike');
-
+   
+   Route::get('/DoVipLike2/{type}','agentApiController@DoVipLike');
+   
+   Route::get('/DoResult','agentApiController@DoResult');
+   Route::get('/history','ApiController@history');
+   // Route::get('/history','agentApiController@history');
 });
 
 
 
-
+   
 /////api agent
-Route::get('/getViplikeID','AgentController@ViplikeID');
+Route::get('/getViplikeID','agentApiController@ViplikeID');
+Route::get('/upClone','agentApiController@upClone');
+Route::get('/updateClone','agentApiController@updateClone');

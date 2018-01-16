@@ -13,6 +13,10 @@ const routes = [
     { path: '/vipshare',component: require('./components/vipshare.vue') },
     { path: '/review',component: require('./components/review.vue') },
     { path: '/profile',component: require('./components/profile.vue') },
+    { path: '/likefanpage',component: require('./components/likefanpage.vue') },
+    { path: '/history',component: require('./components/history.vue') },
+    { path: '/view',component: require('./components/view/view_history.vue') },
+    
 ]
 const router = new VueRouter({
     routes
