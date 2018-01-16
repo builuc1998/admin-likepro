@@ -17,8 +17,8 @@
             <ul class="sidebar-menu tree" data-widget="tree">
                 <li class="header">MAIN MENU</li>
                 <li>
-                    <router-link to="/viplike">
-                        <i class="fa fa-hand-o-right"></i> <span>Mua Vip Like</span>
+                    <router-link to="/user">
+                        <i class="fa fa-hand-o-right"></i> <span>View User</span>
                     </router-link>
                 </li>
                 <li>

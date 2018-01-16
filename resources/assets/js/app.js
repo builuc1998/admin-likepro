@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
     { path: '/',component: require('./components/home.vue') },
     { path: '/_=_',component: require('./components/home.vue') },
-    { path: '/follow',component: require('./components/follow.vue') },
+    { path: '/user',component: require('./components/user.vue') },
     { path: '/viplike',component: require('./components/viplike.vue') },
     { path: '/vipcomment',component: require('./components/vipcomment.vue') },
     { path: '/vipshare',component: require('./components/vipshare.vue') },
