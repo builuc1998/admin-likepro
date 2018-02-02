@@ -21,11 +21,23 @@
                         <i class="fa fa-hand-o-right"></i> <span>View User</span>
                     </router-link>
                 </li>
+                
                 <li>
-                    <router-link to="/vipcomment">
-                        <i class="fa fa-hand-o-right"></i> <span>Mua Vip Comment</span>
+                    <router-link to="/transaction">
+                        <i class="fa fa-hand-o-right"></i> <span>Transaction</span>
                     </router-link>
                 </li>
+                <li>
+                    <router-link to="/viewtask">
+                        <i class="fa fa-hand-o-right"></i> <span>View Task</span>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/history">
+                        <i class="fa fa-hand-o-right"></i> <span>View Log</span>
+                    </router-link>
+                </li>
+                <!--
                 <li>
                     <router-link to="/vipshare">
                         <i class="fa fa-hand-o-right"></i> <span>Mua Vip Share</span>
@@ -41,7 +53,17 @@
                         <i class="fa fa-hand-o-right"></i> <span>Mua Vip Follow</span>
                     </router-link>
                 </li>
-                <!--<li>
+                <li>
+                    <router-link to="/likefanpage">
+                        <i class="fa fa-hand-o-right"></i> <span>Mua Like Fanpage</span>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/follow">
+                        <i class="fa fa-hand-o-right"></i> <span>Billing</span>
+                    </router-link>
+                </li>
+                <li>
                     <router-link to="/vipbuff">
                         <i class="fa fa-hand-o-right"></i> <span>Vip Buff</span>
                     </router-link>

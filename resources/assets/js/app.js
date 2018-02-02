@@ -5,14 +5,12 @@ import App from './App.vue'
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/',component: require('./components/home.vue') },
-    { path: '/_=_',component: require('./components/home.vue') },
     { path: '/user',component: require('./components/user.vue') },
-    { path: '/viplike',component: require('./components/viplike.vue') },
-    { path: '/vipcomment',component: require('./components/vipcomment.vue') },
-    { path: '/vipshare',component: require('./components/vipshare.vue') },
-    { path: '/review',component: require('./components/review.vue') },
-    { path: '/profile',component: require('./components/profile.vue') },
+    { path: '/user/:id',component: require('./components/profile.vue') },
+    { path: '/history',component: require('./components/history.vue') },
+    { path: '/viewtask',component: require('./components/viewtask.vue') },
+    { path: '/transaction',component: require('./components/transaction.vue') }
+    
 ]
 const router = new VueRouter({
     routes

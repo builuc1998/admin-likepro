@@ -102,6 +102,11 @@ export default {
             this.package = $('#package').val();
             this.time = $('#time').val();
             $('#thanhtien').val(this.package * 1000 * (this.time / 15));
+        },
+        me: function(){
+            axios.get('api/me').then((response) => {
+                this.info = response.data;
+            })
         }
     },
     mounted() {
