@@ -18,7 +18,7 @@
                             <th>Ngày Đăng Ký</th>
                             <!--<th v-if="this.$parent.info.level == 0">Cộng Tiền</th>-->
                         </tr>
-                        <tr v-for="(list,keyIndex) in listVipID">
+                        <tr v-for="(list,keyIndex) in listVipID.data">
                             <td>{{keyIndex + 1}}</td>
                             <td>
                                 <router-link :to="'/user/'+list.id">
@@ -33,6 +33,17 @@
                         </tr>
                         </tbody>
                     </table>
+                    </div>
+                    <pagination 
+                      :total="this.listVipID.total" 
+                      :per_page= "this.listVipID.per_page" 
+                      :current_page= "this.listVipID.current_page" 
+                      :last_page= "this.listVipID.last_page" 
+                      :next_page_url= "this.listVipID.next_page_url" 
+                      :prev_page_url= "this.listVipID.prev_page_url" 
+                      :from= "this.listVipID.from" 
+                      :to= "this.listVipID.to" 
+                    ></pagination>
                 </div>
             </div>
         </div>
@@ -40,11 +51,15 @@
 </template>
 <script>
 import axios from 'axios'
+import pagination from './pagination.vue'
 export default {
     data() {
         return {
             listVipID: [],
         }
+    },
+    components: {
+        pagination,
     },
     methods:{
         search: function(){
@@ -67,7 +82,17 @@ export default {
             }).catch(function (error) {
                toastr.error(error.response.data.message);
             });
-        }
+        },
+        toPage(n){
+            let $this = this;
+            axios.get(this.listVipID.path+'?page='+n)
+            .then(function (response){
+                $this.listVipID = response.data;
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+        },
     },
     mounted() {
         axios.get('api/alluser').then((response) => {

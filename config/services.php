@@ -37,6 +37,6 @@ return [
     'facebook' => [
         'client_id' => '1849046112052624',
         'client_secret' => '1e7ef1cb5431fc93ca7b2f88172172ae',
-        'redirect' => 'http://admin.likepro.vip/callback',
+        'redirect' => 'http://admin.auto-sub.com/callback',
     ],
 ];

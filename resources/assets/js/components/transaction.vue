@@ -20,7 +20,7 @@
                         <tr v-for="(tran, keyIndex) in transaction">
                             <td>{{keyIndex + 1}}</td>
                             <td><router-link :to="'user/'+tran.userid">{{tran.name}}</router-link></td>
-                            <td>{{tran.id}}</td>
+                            <td>{{tran.transactionid}}</td>
                             <td>{{tran.money}}</td>
                             <td>{{tran.status}}</td>
                             <td>{{tran.created_at}}</td>

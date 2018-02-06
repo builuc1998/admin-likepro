@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\clone2;
+use App\User;
+use Carbon\Carbon;
+
 
 class CloneController extends Controller
 {
@@ -49,8 +57,10 @@ class CloneController extends Controller
             'birthday' => $birthday,
             'country' => $country,
             'sex' => $sex,
+            'linksp' => 'null',
             'created_at' => date('Y-m-d H:i:s',time()),
-            'updated_at' => date('Y-m-d H:i:s',time())
+            'updated_at' => date('Y-m-d H:i:s',time()),
+            'xoaytua' => date('Y-m-d H:i:s',time())
 		]);
 		
 		return \response()->json($a, 200);
@@ -163,5 +173,17 @@ class CloneController extends Controller
         $chucvu = $r->chucvu;
         User::where('id',$id)->update(['level'=>$chucvu]);
         return 'ok';
+    }
+    public function viewClone($st = '')
+    {
+        if($st == ''){
+            $clone = clone2::where('status','new')->paginate(20);   
+        }else{
+            $clone = clone2::where('status',$st)->orderBy('updated_at','ASC')->paginate(20);
+            
+        }
+        $status = clone2::select('status')->distinct()->get();
+        $array = ['clone'=>$clone,'status'=>$status];
+        return $array;
     }
 }

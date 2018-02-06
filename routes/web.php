@@ -12,6 +12,8 @@
 */
 
 Auth::routes();
+Route::get('/clone', 'HomeController@viewClone');
+Route::get('/clone/{st}', 'HomeController@viewClone');
 
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -24,7 +26,11 @@ Route::get('/callback','LoginController@callback');
 Route::get('/logout','LoginController@logout');
 
 Route::group(['prefix'=>'api'],function(){
+   Route::get('/clone', 'CloneController@viewClone');
+   Route::get('/clone/{st}', 'CloneController@viewClone');
    Route::get('/me','ApiController@me');
+   Route::get('/loadConfig','ApiController@loadConfig');
+   Route::post('/changeConfig','ApiController@changeConfig');
    Route::post('/install','ApiController@install');
    Route::get('/getViplikeID','ApiController@getViplikeID');
    Route::get('/updateClone','agentApiController@updateClone');

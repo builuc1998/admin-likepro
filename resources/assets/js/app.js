@@ -9,7 +9,9 @@ const routes = [
     { path: '/user/:id',component: require('./components/profile.vue') },
     { path: '/history',component: require('./components/history.vue') },
     { path: '/viewtask',component: require('./components/viewtask.vue') },
-    { path: '/transaction',component: require('./components/transaction.vue') }
+    { path: '/transaction',component: require('./components/transaction.vue') },
+    { path: '/config',component: require('./components/config.vue') },
+    { path: '/clone',component: require('./components/Clone.vue') }
     
 ]
 const router = new VueRouter({

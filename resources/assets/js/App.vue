@@ -4,7 +4,7 @@
         <Sidebar></Sidebar>
         <!-- Content Wrapper. Contains page content noidung-->
         <div class="content-wrapper row">
-            <div class="" style="float: left;width: 100%;margin-bottom: 35px;">
+            <div class="" style="float: left;width: 100%;margin-bottom: 35px">
                 <div id="hihi">
                     <router-view>
                     </router-view>
@@ -35,6 +35,7 @@ export default {
             errors: [],
             info:{},
             action: '',
+            config : [],
         }
     },
     methods:{
@@ -107,11 +108,14 @@ export default {
             axios.get('api/me').then((response) => {
                 this.info = response.data;
             })
-        }
+        },
     },
     mounted() {
         axios.get('api/me').then((response) => {
             this.info = response.data;
+        })
+        axios.get('api/loadConfig').then((response) => {
+            this.config = response.data;
         })
     },
 }

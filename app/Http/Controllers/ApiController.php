@@ -12,6 +12,7 @@ use App\history;
 use Carbon\Carbon;
 use App\User;
 use App\transaction;
+use App\Config;
 
 class ApiController extends Controller
 {
@@ -43,7 +44,7 @@ class ApiController extends Controller
         ],200);
     }
     public function alluser(){
-        $his = User::all();
+        $his = User::orderBy('id','ASC')->orderBy('level', 'DESC')->paginate(25);
         return \response()->json($his);   
     }
     
@@ -72,7 +73,7 @@ class ApiController extends Controller
         return \response()->json($json);
     }
     public function transaction(){
-        $transaction = transaction::select(['transaction.userid','transaction.money','transaction.created_at','transaction.id','transaction.status','users.name'])->join('users', 'users.id', '=', 'transaction.userid')->get();
+        $transaction = transaction::select(['transaction.userid','transaction.money','transaction.created_at','transaction.id','transaction.status','transaction.transactionid','users.name'])->join('users', 'users.id', '=', 'transaction.userid')->get();
         return $transaction;
     }
     public function ConfirmTransaction(Request $request){
@@ -89,4 +90,20 @@ class ApiController extends Controller
             return response()->json(['success'=>'false','message'=>'Bạn không có quyền thực hiện hành động này!']);
         }
     }
+    public function loadConfig(){
+        $config = Config::select(['key','value','link'])->get();
+        return $config;
+    }
+    public function changeConfig(Request $request){
+        $val = $request->all();
+        foreach($val as $key=>$v){
+            if($key == 'link-powered'){
+                Config::where('key','powered')->update(['link'=>$v]);
+            }else{
+                Config::where('key',$key)->update(['value'=>$v]);                
+            }
+        }
+        return response()->json(['success'=>'true','message'=>'Thay đổi thành công']);
+    }
+
 }

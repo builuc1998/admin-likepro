@@ -21,7 +21,11 @@
                         <i class="fa fa-hand-o-right"></i> <span>View User</span>
                     </router-link>
                 </li>
-                
+                <li>
+                    <router-link to="/clone">
+                        <i class="fa fa-hand-o-right"></i> <span>View Clone</span>
+                    </router-link>
+                </li>
                 <li>
                     <router-link to="/transaction">
                         <i class="fa fa-hand-o-right"></i> <span>Transaction</span>
@@ -35,6 +39,11 @@
                 <li>
                     <router-link to="/history">
                         <i class="fa fa-hand-o-right"></i> <span>View Log</span>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/config">
+                        <i class="fa fa-hand-o-right"></i> <span>Config Site</span>
                     </router-link>
                 </li>
                 <!--
